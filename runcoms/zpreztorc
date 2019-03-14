@@ -120,19 +120,11 @@ zstyle ':prezto:module:prompt' theme 'sorin'
 # Set the working directory prompt display length.
 # By default, it is set to 'short'. Set it to 'long' (without '~' expansion)
 # for longer or 'full' (with '~' expansion) for even longer prompt display.
-<<<<<<< HEAD
-zstyle ':prezto:module:prompt' pwd-length 'long'
-
-# Set the prompt to display the return code along with an indicator for non-zero
-# return codes. This is not supported by all prompts.
-zstyle ':prezto:module:prompt' show-return-val 'yes'
-=======
  zstyle ':prezto:module:prompt' pwd-length 'full'
 
 # Set the prompt to display the return code along with an indicator for non-zero
 # return codes. This is not supported by all prompts.
-# zstyle ':prezto:module:prompt' show-return-val 'yes'
->>>>>>> 3fd35a61afbdae02f46512e3c16953d1d926d733
+ zstyle ':prezto:module:prompt' show-return-val 'yes'
 
 #
 # Python
