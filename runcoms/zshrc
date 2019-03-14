@@ -11,3 +11,37 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
 fi
 
 # Customize to your needs...
+alias="ls -lah"
+
+# misc/OS
+alias ls='ls -GFhla'
+alias showHidden='defaults write com.apple.finder AppleShowAllFiles YES; killall Finder /System/Library/CoreServices/Finder.app'
+alias hideHidden='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder /System/Library/CoreServices/Finder.app'
+# docker
+alias dc='docker-compose'
+alias dcu='dc up'
+alias dcd='dc down'
+alias dls='docker ps -a -q'
+alias drmcall='docker rm $(docker ps -a -q)'
+alias drmiall='docker rmi $(docker images -a -q)'
+alias dstop='docker stop $(docker ps -a -q)'
+alias dp='docker ps'
+alias dpa='docker ps -a'
+# git
+alias gs='git status '
+alias ga='git add .'
+alias gb='git branch'
+alias gck='git checkout'
+alias gl='git log -3 | cowsay | lolcat'
+alias gll='git log'
+alias gckm='git checkout master'
+alias gc='git commit -m'
+alias gpl='git pull'
+alias gp='git push'
+
+alias jm5='open /usr/local/bin/jmeter'
+alias jm4='open /usr/local/bin/jmeter4/'
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_192.jdk/Contents/Home
