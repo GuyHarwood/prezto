@@ -61,3 +61,5 @@ export PATH="$PATH:$HOME/.rvm/bin"
 
 # added by travis gem
 [ -f /Users/guyharwood/.travis/travis.sh ] && source /Users/guyharwood/.travis/travis.sh
+
+# 25 July 2020
