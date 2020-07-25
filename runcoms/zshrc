@@ -24,6 +24,7 @@ alias dcd='dc down'
 alias dls='docker ps -a -q'
 alias drmcall='docker rm $(docker ps -a -q)'
 alias drmiall='docker rmi $(docker images -a -q)'
+alias dkillem='docker kill $(docker ps -a -q)'
 alias dstop='docker stop $(docker ps -a -q)'
 alias dp='docker ps'
 alias dpa='docker ps -a'
@@ -35,13 +36,28 @@ alias gck='git checkout'
 alias gll='git log -3 | cowsay | lolcat'
 alias gl='git log'
 alias gckm='git checkout master'
+alias gms='git checkout master && git pull'
 alias gc='git commit -m'
 alias gpl='git pull'
 alias gp='git push'
+# alias gpr='BRANCH=\"$(git branch | grep \* | cut -d ' ' -f2)\" && git push --set-upstream origin $BRANCH'
+alias bs='for branch in `git branch -r | grep -v HEAD`; do echo -e `git log -n1 --format="%an" $branch` \\t$branch; done | sort -r'
 
+# jmeter
 alias jm5='open /usr/local/bin/jmeter'
 alias jm4='open /usr/local/bin/jmeter4/'
 
+# mtc tasks
+alias cdm='cd ~/dev/mtc'
+
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_192.jdk/Contents/Home
+[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+[ -s "/usr/local/opt/nvm/etc/bash_completion" ] && . "/usr/local/opt/nvm/etc/bash_completion"  # This loads nvm bash_completion
+
+# export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_192.jdk/Contents/Home
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
+
+# added by travis gem
+[ -f /Users/guyharwood/.travis/travis.sh ] && source /Users/guyharwood/.travis/travis.sh
